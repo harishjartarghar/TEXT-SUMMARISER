@@ -46,8 +46,9 @@ function SUBMIT()
             'lines': lines
           })
           .then(function (response) {
-            setBert(response["bert"]);
-            setTF_IDF(response["tf_idf"]);
+            console.log(response)
+            setBert(response.data["bert"]);
+            setTF_IDF(response.data["tf_idf"]);
           })
           .catch(function (error) {
             console.log(error);
@@ -60,8 +61,10 @@ function SUBMIT()
                 'lines': lines
               })
               .then(function (response) {
-                setBert(response["bert"]);
-                setTF_IDF(response["tf_idf"]);
+            console.log(response.data)
+
+                setBert(response.data["bert"]);
+                setTF_IDF(response.data["tf_idf"]);
               })
               .catch(function (error) {
                 console.log(error);

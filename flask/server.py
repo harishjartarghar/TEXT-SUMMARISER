@@ -35,11 +35,11 @@ def SUMMARY1():
 	summary=TF_IDF(text)
 
 	#BERT ALGO
-	model = Summarizer()
-	result=model(text,num_sentences=lines)
+	#model = Summarizer()
+	#result=model(text,num_sentences=lines)
 
 
-	return jsonify({"tf_idf":summary,"bert":result})
+	return jsonify({"tf_idf":summary,"bert":"result"})
 
 
 @app.route('/api/summary2',methods=["POST"])
@@ -58,14 +58,15 @@ def SUMMARY2():
 	data = re.sub(r'\[[0-9]*\]', ' ', data)
 	data = re.sub(r'\s+', ' ',data)
 
+	print(data)
 	#TF IDF ALGORITHM
 	summary=TF_IDF(data)
 
 	#BERT ALGO
-	model = Summarizer()
-	result=model(data,num_sentences=lines)
+	#model = Summarizer()
+	#result=model(data,num_sentences=lines)
 
-	return jsonify({"tf_idf":summary,"bert":result})
+	return jsonify({"tf_idf":summary,"bert":"result"})
 
 
 
